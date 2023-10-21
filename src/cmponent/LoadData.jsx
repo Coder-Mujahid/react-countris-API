@@ -41,31 +41,8 @@ function DisplayData(props) {
 }
 
 function Details(props) {
-    const [data, setdata] = useState([]);
-
-    fetch(`https://restcountries.com/v3.1/alpha/${props}`)
-    .then((res) => res.json())
-    .then(data =>setdata(data[0]))
-    return(
-        <div>
-        <h2>mujahid</h2>
-        {data.map((item) => (
-        <Displaydetails data={item}></Displaydetails>
-      ))}
-        </div>
-    )
-}
-
-
-
-function Displaydetails(props) {
-    const { name, flags,ccn3 } = props.data;
-
-return(
-    <div>
-        <h2>{name.common}</h2>
-    </div>
-)
     
 }
+
+
 export default LoadData;
