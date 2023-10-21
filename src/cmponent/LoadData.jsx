@@ -12,7 +12,6 @@ function LoadData() {
   }, []);
   return (
     <div className=" w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 gap-5">
-    <Alldetais></Alldetais>
       {country.map((item) => (
         <DisplayData data={item}></DisplayData>
       ))}
@@ -38,7 +37,6 @@ function DisplayData(props) {
             if you want see more details follow the button
           </p>
           <button
-            onClick={() => Details(`${ccn3}`)}
             className="btn btn-primary w-full"
           >
             Details
@@ -48,23 +46,4 @@ function DisplayData(props) {
     </>
   );
 }
-function Details(code) {
-
-  fetch(`https://restcountries.com/v3.1/alpha/${code}`)
-    .then((res) => res.json())
-    .then((item2) => Alldetais(item2));
-
-}
-
-function Alldetais(id){
-
-  return  (
-   <div>
-      {
-        
-      }
-   </div>
-  )
-}
-
-export default LoadData;
+export default LoadData
